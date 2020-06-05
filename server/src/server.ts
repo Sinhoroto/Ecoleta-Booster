@@ -1,16 +1,10 @@
-import express  from 'express';
+import express from 'express';
+import routes from './routes';
 
 const app = express();
 
-app.get('/user', (request, response) => {
-    console.log('Listagem de usuários');
+app.use(express.json());
+app.use(routes);
 
-    response.json([
-        'Diego',
-        'Robson',
-        'Cleiton',
-        'Daniel'
-    ]);
-});
 
 app.listen(3333);
